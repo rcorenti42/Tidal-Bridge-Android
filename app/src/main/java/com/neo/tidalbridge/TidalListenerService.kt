@@ -22,7 +22,8 @@ class TidalListenerService : NotificationListenerService() {
     private var isPlaying: Boolean = false
 
     private val handler = Handler(Looper.getMainLooper())
-    private val interval = 1000L
+    private val interval = 500L
+    private val ws = WebSocketClient()
 
     private val ticker = object : Runnable {
         override fun run() {
@@ -43,15 +44,22 @@ class TidalListenerService : NotificationListenerService() {
                     put("playing", isPlaying)
                 }
 
-                Log.d("TIDAL_JSON", json.toString())
+                ws.send(json.toString())
+                Log.d("WS", json.toString())
             }
 
             handler.postDelayed(this, interval)
         }
     }
 
+    override fun onCreate() {
+        super.onCreate()
+        Log.e("WS", "SERVICE CREATED")
+    }
+
     override fun onListenerConnected() {
-        Log.d("TIDAL", "Listener connected")
+        Log.e("WS", "LISTENER CONNECTED")
+        ws.connect()
         handler.post(ticker)
     }
 
@@ -99,12 +107,14 @@ class TidalListenerService : NotificationListenerService() {
                 put("playing", false)
             }
 
-            Log.d("TIDAL_JSON", json.toString())
+            ws.send(json.toString())
+            Log.d("WS", json.toString())
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacks(ticker)
+        ws.close()
     }
 }
