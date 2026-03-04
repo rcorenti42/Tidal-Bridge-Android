@@ -2,7 +2,7 @@
 
 Android background service that listens to TIDAL playback metadata and streams track information through WebSocket.
 
-This application is designed to work with the companion project **Tidal-Presence (Rust)**, which converts this data into a Discord Rich Presence.
+This application is designed to work with the companion project **Tidal-Presence (Rust)** *(https://github.com/rcorenti42/Tidal-Presence)*, which converts this data into a Discord Rich Presence.
 
 The service runs continuously in the background and automatically reconnects after device reboot.
 
