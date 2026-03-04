@@ -1,21 +1,29 @@
 # TIDAL Bridge Android
 
-Android background service that listens to TIDAL playback metadata and streams track information through WebSocket.
+Android service that captures **TIDAL playback metadata** and streams it in real time over **WebSocket**.
 
-This application is designed to work with the companion project **Tidal-Presence (Rust)** *(https://github.com/rcorenti42/Tidal-Presence)*, which converts this data into a Discord Rich Presence.
+This project is designed to work with **TIDAL Presence** *(https://github.com/rcorenti42/Tidal-Presence)*, a Rust application that converts playback data into **Discord Rich Presence**.
 
-The service runs continuously in the background and automatically reconnects after device reboot.
+---
+
+## Badges
+
+![Android 12+](https://img.shields.io/badge/Android-12%2B-3DDC84?logo=android&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-1.x-7F52FF?logo=kotlin&logoColor=white)
+![WebSocket](https://img.shields.io/badge/WebSocket-real--time-blue)
+![TIDAL Integration](https://img.shields.io/badge/TIDAL-integration-000000?logo=tidal&logoColor=white)
+![Discord RPC](https://img.shields.io/badge/Discord-Rich%20Presence%20Companion-5865F2?logo=discord&logoColor=white)
 
 ---
 
 ## Features
 
-- Listen to **TIDAL playback metadata**
-- Send track data in **real time via WebSocket**
-- Designed to run **24/7 in background**
-- **Automatic reconnection**
-- Works on **local network or VPN**
-- Compatible with **Android 12+**
+- Real-time **TIDAL playback detection**
+- Sends playback metadata through **WebSocket**
+- **Lightweight background service**
+- Automatic **connection retry**
+- Compatible with **local network or VPN**
+- Designed to work with **TIDAL Presence**
 
 ---
 
@@ -23,22 +31,22 @@ The service runs continuously in the background and automatically reconnects aft
 
     TIDAL Android App
             │
-            │ Track metadata
+            │ Playback metadata
             ▼
-    WebSocket Client
+    Android Listener
             │
-            │ JSON
+            │ WebSocket JSON
             ▼
-    TIDAL Presence Server (Rust)
+    TIDAL Presence
             │
             ▼
     Discord Rich Presence
 
 ---
 
-## Data Sent
+## Data Format
 
-The Android app sends JSON messages containing playback information.
+Playback information is sent as JSON messages.
 
 Example:
 
@@ -52,7 +60,7 @@ Example:
 }
 ```
 
-Fields:
+Field description:
 
 | Field    | Description                    |
 | -------- | ------------------------------ |
@@ -64,15 +72,15 @@ Fields:
 
 ---
 
-## Network Requirements
+## Network Setup
 
-The Android app connects to the **Tidal-Presence (Rust) Server** via WebSocket.
+The Android app connects to the **TIDAL Presence** server.
 
 Exemple:
 
     ws://192.168.1.42:3000
 
-Since the system is designed for **local network usage**, remote connections require a VPN such as **WireGuard**.
+Since the system is designed for **LAN communication**, remote usage requires a VPN.
 
 Exemple topology:
 
@@ -83,7 +91,7 @@ Exemple topology:
     Home Network
             │
             ▼
-    Tidal-Presence (Rust)
+    TIDAL Presence
 
 ---
 
@@ -91,24 +99,37 @@ Exemple topology:
 
 - Android 12+
 - TIDAL installed
-- WireGuard (optional for remote usage)
+- WebSocket server (TIDAL Presence)
+
+Optional:
+- WireGuard for remote connectivity
 
 ---
 
 ## Running
 
-1. Install the APK on your device.
+1. Install the APK.
 2. Configure the WebSocket server address.
-3. Start the background service.
-4. Launch TIDAL and play music.
+3. Start the listener service.
+4. Play music in TIDAL.
 
-The application will automatically stream playback data.
+Track metadata will be streamed automatically.
 
 ---
 
-## Notes
+## Companion Project
 
-This application is intended **for personal use** and was built to integrate TIDAL with Discord Rich Presence, which is not natively supported.
+This project is designed to work with:
+
+**TIDAL Presence** *(https://github.com/rcorenti42/Tidal-Presence)*
+
+A Rust application that converts playback data into Discord Rich Presence.
+
+---
+
+## Disclamer
+
+This project is an **unofficial integration** with TIDAL and is not affiliated with TIDAL or Discord.
 
 ---
 ---
