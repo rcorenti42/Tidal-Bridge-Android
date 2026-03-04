@@ -76,7 +76,7 @@ Since the system is designed for **local network usage**, remote connections req
 
 Exemple topology:
 
-    Android(12+) Phone (WiFi/4G/5G)
+    Android Phone (WiFi/4G/5G)
             │
             │ WireGuard VPN
             ▼
