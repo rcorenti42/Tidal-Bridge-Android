@@ -1,18 +1,14 @@
-# TIDAL Bridge Android
-
-Android service that captures **TIDAL playback metadata** and streams it in real time over **WebSocket**.
-
-This project is designed to work with **TIDAL Presence** *(https://github.com/rcorenti42/Tidal-Presence)*, a Rust application that converts playback data into **Discord Rich Presence**.
-
----
-
-## Badges
-
 ![Android 12+](https://img.shields.io/badge/Android-12%2B-3DDC84?logo=android&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.x-7F52FF?logo=kotlin&logoColor=white)
 ![WebSocket](https://img.shields.io/badge/WebSocket-real--time-blue)
 ![TIDAL Integration](https://img.shields.io/badge/TIDAL-integration-000000?logo=tidal&logoColor=white)
 ![Discord RPC](https://img.shields.io/badge/Discord-Rich%20Presence%20Companion-5865F2?logo=discord&logoColor=white)
+
+# TIDAL Bridge Android
+
+Android service that captures **TIDAL playback metadata** and streams it in real time over **WebSocket**.
+
+This project is designed to work with **TIDAL Presence** *(https://github.com/rcorenti42/Tidal-Presence)*, a Rust application that converts playback data into **Discord Rich Presence**.
 
 ---
 
