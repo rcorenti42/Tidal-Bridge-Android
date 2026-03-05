@@ -1,4 +1,8 @@
-![Android](https://img.shields.io/badge/Android-12%2B-3DDC84?logo=android&logoColor=white) ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white) ![WebSocket](https://img.shields.io/badge/WebSocket-real--time-blue) ![TIDAL](https://img.shields.io/badge/TIDAL-integration-black?logo=tidal&logoColor=white) ![Discord](https://img.shields.io/badge/Discord-Rich%20Presence-5865F2?logo=discord&logoColor=white)
+[![Android](https://img.shields.io/badge/Android-12%2B-3DDC84?logo=android&logoColor=white)](https://www.android.com)
+[![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org)
+[![WebSocket](https://img.shields.io/badge/WebSocket-real--time-blue)](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+[![TIDAL](https://img.shields.io/badge/TIDAL-integration-black?logo=tidal&logoColor=white)](https://tidal.com)
+[![Discord](https://img.shields.io/badge/Discord-Rich%20Presence-5865F2?logo=discord&logoColor=white)](https://discord.com)
 
 # TIDAL Bridge Android
 
